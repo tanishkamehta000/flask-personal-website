@@ -1,0 +1,207 @@
+/* General Styles */
+body {
+  background-color: white;
+  color: black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #003366; /* Dark Blue Theme */
+}
+
+/* Hamburger Menu */
+.hamburger {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  transition: all 0.25s;
+  position: relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background-color: #003366; /* Dark Blue Shade */
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.hamburger-middle {
+  transform: translateY(7px);
+}
+
+.hamburger-bottom {
+  transform: translateY(14px);
+}
+
+.open {
+  transform: rotate(90deg);
+  transform: translateY(0px);
+}
+
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translate(6px);
+}
+
+.open .hamburger-middle {
+  display: none;
+}
+
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(6px) translate(-6px);
+}
+
+/* Button Styles */
+button, a.button, .button {
+  background-color: #003366; 
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+button:hover, a.button:hover, .button:hover {
+  background-color: #002244;
+}
+
+/* Hero (Main) Section */
+#hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+#hero h1 span {
+  color: #003366;
+}
+
+/* Add spacing to the bottom of the section */
+#hero {
+  padding-bottom: 40px; /* Adjust based on design requirements */
+}
+
+/* Left Intro Paragraph */
+.hero-left {
+  flex: 2; /* Adjust text width */
+  max-width: 100%;
+  margin-bottom: 40px; 
+}
+
+.text-center a {
+  color: #1E3A8A; /* Dark blue shade */
+}
+
+.text-center a:hover {
+  color: #374151; /* Slightly darker blue shade */
+}
+
+/* Skillset Section */
+#skillset h2 {
+  color: #003366;
+}
+
+/* Top Margin for Skillset Section */
+#skillset {
+  margin-top: 100px;
+}
+
+/* Projects Section */
+#projects h2 {
+  color: #003366;
+}
+
+/* Logo Container */
+.logo-container {
+  width: 200px;
+  height: auto;
+}
+
+/* Logo Image */
+.logo-img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Image Container */
+.image-container {
+  display: flex;
+  justify-content: flex-start; /* Align the image to the right */
+  margin-bottom: 100px; /* Space below the image */
+}
+
+/* Intro Image */
+.intro-img {
+  width: 90%;
+  height: auto; /* Maintain aspect ratio */
+  max-width: 500px;
+}
+
+/* Custom Paragraph Spacing */
+.custom-spacing {
+  margin-bottom: -0.25rem; /* Adjust this value as needed */
+}
+
+/* Project Model Layout */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 600px;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Project Title */
+.modal-content h2 {
+  font-size: 2em; 
+  font-weight: bold;
+  margin-bottom: 10px; 
+}
+
+/* Project Logo Images */
+.project-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.project-box {
+  flex: 1 1 30%;
+  margin: 0.5rem;
+}
+
+/* Contact Social Media Icon Styles */
+.flex .h-6 {
+  width: 24px;
+  height: 24px;
+}

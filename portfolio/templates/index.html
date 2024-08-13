@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tanishka Mehta Portfolio</title>
+
+    <!-- add the Tailwind cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- custom css -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="relative container mx-auto p-6">
+      <!-- flex container -->
+      <div class="flex items-center justify-between">
+        <!-- logo -->
+        <div class="pt-2 logo-container">
+          <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" />
+        </div>
+        <!-- Menu Items -->
+        <div class="hidden md:flex space-x-6">
+          <a href="#skillset" class="hover:text-gray-500">Experience & Skills</a>
+          <a href="#projects" class="hover:text-gray-500">Projects</a>
+          <a href="#contact" class="hover:text-gray-500">Contact</a>
+        </div>
+        
+        <!-- Hamburger Menu -->
+        <button
+          id="menu-btn"
+          class="block hamburger md:hidden outline-none focus:outline-none"
+        >
+          <span class="hamburger-top"></span>
+          <span class="hamburger-middle"></span>
+          <span class="hamburger-bottom"></span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="md:hidden">
+        <div
+          id="menu"
+          class="absolute flex-col items-center self-end hidden py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md"
+        >
+          <a href="#skillset">Skillset</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <!-- End of Navbar -->
+
+    <!-- Hero Section -->
+    <style>
+      @keyframes typing {
+        from { width: 0; }
+        to { width: 100%; }
+      }
+      
+      @keyframes blink-caret {
+        from, to { border-color: transparent; }
+        50% { border-color: black; }
+      }
+      
+      /* Greeting animation */
+      .typing-animation {
+        display: inline-block;
+        overflow: hidden;
+        border-right: .15em solid black;
+        white-space: nowrap;
+        animation: typing 2s steps(20, end), blink-caret 1s step-end infinite;
+        width: 100%;
+        max-width: fit-content;
+      }
+      </style>
+      
+      
+      
+  <section id="hero">
+    <div class="container flex flex-col-reverse md:flex-row items-center px-6 mx-auto mt-10 space-y-0 md:space-y-0">
+      <!-- Animation and Intro Paragraph (Left) -->
+      <div class="flex flex-col hero-left space-y-12 md:w-2/3">
+        <h1 class="max-w-md text-4xl font-bold text-center md:text-5xl md:text-left">
+          <span class="typing-animation"><span style="color: black;">Hi, I'm</span> <span class="text-blue-900">Tanishka</span><span style="color: black;">!</span></span>
+        </h1>        
+                          
+        <p class="max-w-sm text-center text-gray-700 md:text-left">
+            I'm a Computer Science major at Georgia Tech. I am currently a Cyber Security Engineer and Cloud Solutions Architect at The Aerospace Corporation. 
+        </p>
+        <div class="flex justify-center md:justify-start">
+          <!-- Contact Button -->
+          <a href="#contact" class="button">Contact Me</a>
+        </div>
+      </div>
+      <!-- Image (Right) -->
+      <div class="image-container">
+        <img src="{{ url_for('static', filename='images/image_01.png') }}" alt="Intro Image" class="intro-img" />
+      </div>
+    </div>
+  </section>  
+  
+  <!-- Skillset Section -->
+  <section id="skillset">
+    <div class="container flex flex-col mx-auto items-center space-y-12 mt-10 px-4 md:flex-row md:space-y-0">
+      <!-- Experiences (Left) -->
+      <div class="flex flex-col space-y-10 md:w-1/2">
+        <h2 class="max-w-md text-4xl font-bold text-center md:text-left">
+          Experience
+        </h2>
+        <p style="margin-bottom: -2.50rem;"><strong>May 2024 - Aug 2024</strong></p>
+        <p style="margin-bottom: -1.00rem;">Cyber Security Engineer & Cloud Solutions Architect @ The Aerospace Corporation</p>
+
+        <p style="margin-bottom: -2.50rem;"><strong>Nov 2020 - current</strong></p>
+        <p style="margin-bottom: -1.00rem;">Co-Founder & CEO @ programLIVE 501(c) non-profit</p>
+
+        <p style="margin-bottom: -2.50rem;"><strong>Oct 2020 - Aug 2022</strong></p>
+        <p style="margin-bottom: -1.00rem;">Aerospace Engineer @ The National Aeronautics and Space Administration (NASA) </p>
+
+        <p style="margin-bottom: -2.50rem;"><strong>Jun 2022 - Jul 2022</strong></p>
+        <p style="margin-bottom: -1.00rem;">Electrical Engineering Intern @ VA Summer Governor’s School for Math, Science, Technology</p>
+
+        <p style="margin-bottom: -2.50rem;"><strong>Jun 2021 - Aug 2021</strong></p>
+        <p style="margin-bottom: -1.00rem;">Cloud Analyst @ Agricair</p>
+      </div>
+  
+      <!-- Skills (Right) in Numbered list -->
+      <div class="flex flex-col space-y-8 md:w-1/2">
+        <h2 class="max-w-md text-4xl font-bold text-center md:text-left">
+          Skillset
+        </h2>
+        <!-- Item 1 -->
+        <div class="flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row">
+          <div class="rounded-l-full bg-slate-500 md:bg-transparent">
+            <div class="flex items-center space-x-2">
+              <div class="px-4 py-2 button">
+                01
+              </div>
+              <h3 class="text-white font-bold md:mb-4 md:hidden">
+                 Languages
+              </h3>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg mb-4 font-bold md:block">Languages</h3>
+            <p class="text-gray-700">
+                Java, Python, Kotlin, HTML, CSS, SQL, JavaScript, C#, TypeScript
+            </p>
+          </div>
+        </div>
+  
+        <!-- Item 2 -->
+        <div class="flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row">
+          <div class="rounded-l-full bg-slate-500 md:bg-transparent">
+            <div class="flex items-center space-x-2">
+              <div class="px-4 py-2 button">
+                02
+              </div>
+              <h3 class="text-white font-bold md:mb-4 md:hidden">
+                Libraries
+              </h3>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg mb-4 font-bold md:block">Libraries</h3>
+            <p class="text-gray-700">
+                Pandas, NumPy, PyTorch, Scikit-learn, Matplotlib, Keras, TensorFlow
+            </p>
+          </div>
+        </div>
+  
+        <!-- Item 3 -->
+        <div class="flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row">
+          <div class="rounded-l-full bg-slate-500 md:bg-transparent">
+            <div class="flex items-center space-x-2">
+              <div class="px-4 py-2 button">
+                03
+              </div>
+              <h3 class="text-white font-bold md:mb-4 md:hidden">
+                Web Frameworks & Development
+              </h3>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg mb-4 font-bold md:block">Web Frameworks & Development</h3>
+            <p class="text-gray-700">
+                Django, Flask, Express.js, React, Angular, Node.js
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row">
+            <div class="rounded-l-full bg-slate-500 md:bg-transparent">
+              <div class="flex items-center space-x-2">
+                <div class="px-4 py-2 button">
+                  04
+                </div>
+                <h3 class="text-white font-bold md:mb-4 md:hidden">
+                  OS Experience
+                </h3>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg mb-4 font-bold md:block">OS Experience</h3>
+              <p class="text-gray-700">
+                MacOS, iOS, Windows, Windows Server, Linux, Android
+              </p>
+            </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  
+  <!-- Projects -->
+  <section id="projects">
+    <div class="max-w-6xl px-5 mx-auto mt-32 text-center">
+      <h2 class="text-4xl text-center font-bold text-blue-900">
+        Projects
+      </h2>
+
+      <!-- First Row -->
+      <div class="flex flex-col mt-24 md:flex-row md:space-x-6">
+        <!-- Project 1 -->
+        <div class="max-w-sm my-3 bg-white border border-gray-200 rounded-lg shadow-md project-box">
+          <a href="#">
+            <img
+              class="project-image rounded-t-lg"
+              src="{{ url_for('static', filename='images/vip.png') }}"
+              alt="Intelligent Digital Systems"
+            />
+          </a>
+          <div class="p-5 project-content">
+            <a href="#">
+              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                Intelligent Digital Systems
+              </h5>
+            </a>
+            <p class="mb-3 font-normal text-gray-700">
+              Transform the future of wireless tech with a Georgia Tech research project that optimizes spectrum use and device interaction through cutting-edge technology and smart solutions.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-center text-white button"
+              style="color: white !important;"
+              onclick="openModal('modal-1')"
+            >
+              Learn More
+            </a>
+          </div>
+        </div>
+  
+        <!-- Project 2 -->
+        <div class="max-w-sm my-3 bg-white border border-gray-200 rounded-lg shadow-md project-box">
+          <a href="#">
+            <img
+              class="project-image rounded-t-lg"
+              src="{{ url_for('static', filename='images/scholarsync.png') }}"
+              alt="ScholarSync"
+            />
+          </a>
+          <div class="p-5 project-content">
+            <a href="#">
+              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                ScholarSync
+              </h5>
+            </a>
+            <p class="mb-3 font-normal text-gray-700">
+              Discover new research opportunities effortlessly with a platform that matches students with professors and combines seamless user management, intuitive design, and real-time communication.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-center text-white button"
+              style="color: white !important;"
+              onclick="openModal('modal-2')"
+            >
+              Learn More
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="max-w-sm my-3 bg-white border border-gray-200 rounded-lg shadow-md project-box">
+          <a href="#">
+            <img
+              class="project-image rounded-t-lg"
+              src="{{ url_for('static', filename='images/spotify.png') }}"
+              alt="Spotify Wrapped 2.0"
+            />
+          </a>
+          <div class="p-5 project-content">
+            <a href="#">
+              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                Spotify Wrapped 2.0
+              </h5>
+            </a>
+            <p class="mb-3 font-normal text-gray-700">
+              Supercharge your Spotify experience with an app that shows your top artists, suggests similar music through a chatbot, and seamlessly saves authentication information for a personalized touch.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-center text-white button"
+              style="color: white !important;"
+              onclick="openModal('modal-3')"
+            >
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Second Row -->
+      <div class="flex flex-col mt-16 md:flex-row md:space-x-6">
+        <!-- Project 4 -->
+        <div class="max-w-sm my-3 bg-white border border-gray-200 rounded-lg shadow-md project-box">
+          <a href="#">
+            <img
+              class="project-image rounded-t-lg"
+              src="{{ url_for('static', filename='images/travelplanner.png') }}"
+              alt="Sustainable Travel Planner"
+            />
+          </a>
+          <div class="p-5 project-content">
+            <a href="#">
+              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                Sustainable Travel Planner
+              </h5>
+            </a>
+            <p class="mb-3 font-normal text-gray-700">
+              Plan your perfect eco-friendly vacation with a website that curates accommodations, dining, and activities based on your interests and budget, all powered by smart data integration and a intuitive, user-friendly design.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-center text-white button"
+              style="color: white !important;"
+              onclick="openModal('modal-4')"
+            >
+              Learn More
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="max-w-sm my-3 bg-white border border-gray-200 rounded-lg shadow-md project-box">
+          <a href="#">
+            <img
+              class="project-image rounded-t-lg"
+              src="{{ url_for('static', filename='images/fitness.png') }}"
+              alt="Health, Fitness, and Nutrition Tracker"
+            />
+          </a>
+          <div class="p-5 project-content">
+            <a href="#">
+              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                Health, Fitness, and Nutrition Tracker
+              </h5>
+            </a>
+            <p class="mb-3 font-normal text-gray-700">
+              Stay on top of your wellness journey with a personalized website that tracks your health, fitness, and nutrition, integrating seamlessly with Apple Watch data and offering secure synchronization and payment options.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-center text-white button"
+              style="color: white !important;"
+              onclick="openModal('modal-5')"
+            >
+              Learn More
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="max-w-sm my-3 bg-white border border-gray-200 rounded-lg shadow-md project-box">
+          <a href="#">
+            <img
+              class="project-image rounded-t-lg"
+              src="{{ url_for('static', filename='images/quantum2.png') }}"
+              alt="Quantum Cryptosystem for Information Transfer"
+            />
+          </a>
+          <div class="p-5 project-content">
+            <a href="#">
+              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                Quantum Cryptosystem for Information Transfer
+              </h5>
+            </a>
+            <p class="mb-3 font-normal text-gray-700">
+              Revolutionize secure data transfer with a cutting-edge quantum cryptosystem that’s 70% safer and recognized by top institutions for its groundbreaking advancements in quantum cryptography.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-center text-white button"
+              style="color: white !important;"
+              onclick="openModal('modal-6')"
+            >
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Third Row -->
+      <div class="flex flex-col mt-16 md:flex-row md:space-x-6">
+        <!-- Project 7 -->
+        <div class="max-w-sm my-3 bg-white border border-gray-200 rounded-lg shadow-md project-box">
+          <a href="#">
+            <img
+              class="project-image rounded-t-lg"
+              src="{{ url_for('static', filename='images/googleplay.png') }}"
+              alt="Detection of Malicious Apps on Google Play"
+            />
+          </a>
+          <div class="p-5 project-content">
+            <a href="#">
+              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                Detection of Malicious Apps on Google Play
+              </h5>
+            </a>
+            <p class="mb-3 font-normal text-gray-700">
+              Transform Google Play into a fortress of safety with cutting-edge machine learning that detects and eliminates malicious apps, boosting platform security by 86% and keeping users protected from hidden threats.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-center text-white button"
+              style="color: white !important;"
+              onclick="openModal('modal-7')"
+            >
+              Learn More
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 8 -->
+        <div class="max-w-sm my-3 bg-white border border-gray-200 rounded-lg shadow-md project-box">
+          <a href="#">
+            <img
+              class="project-image rounded-t-lg"
+              src="{{ url_for('static', filename='images/biodiversity.png') }}"
+              alt="Biodiversity Analysis of Farmland"
+            />
+          </a>
+          <div class="p-5 project-content">
+            <a href="#">
+              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                Biodiversity Analysis of Farmland
+              </h5>
+            </a>
+            <p class="mb-3 font-normal text-gray-700">
+              Unlock the secrets of farmland evolution with a machine learning-driven analysis that reveals biodiversity trends and impacts from secondary succession, using advanced algorithms and stunning visualizations to enhance our understanding of ecosystem changes.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-center text-white button"
+              style="color: white !important;"
+              onclick="openModal('modal-8')"
+            >
+              Learn More
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 9 -->
+        <div class="max-w-sm my-3 bg-white border border-gray-200 rounded-lg shadow-md project-box">
+          <a href="#">
+            <img
+              class="project-image rounded-t-lg"
+              src="{{ url_for('static', filename='images/radon.png') }}"
+              alt="Anaylsis of Radon Levels in Home Basements"
+            />
+          </a>
+          <div class="p-5 project-content">
+            <a href="#">
+              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                Analysis of Radon Levels in Home Basements
+              </h5>
+            </a>
+            <p class="mb-3 font-normal text-gray-700">
+              Dive into a groundbreaking study that unveils the hidden dangers of radon exposure by revealing how proximity to water wells affects basement radon levels, with vivid maps and clear insights that spotlight crucial health risks.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-center text-white button"
+              style="color: white !important;"
+              onclick="openModal('modal-9')"
+            >
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+    <!-- Project Modal Pop-ups -->
+    <section>
+      <!-- Project 1 -->
+      <div id="modal-1" class="modal hidden">
+        <div class="modal-content">
+          <span class="close-button" onclick="closeModal('modal-1')">&times;</span>
+          <h2>Intelligent Digital Communications</h2>
+          <p>
+            Intelligent Digital Communications, a Georgia Tech VIP project, focuses on revolutionizing the way we utilize spectrum and smart devices like smartphones and tablets.
+            By leveraging <b>Machine Learning</b>, <b>Signal Processing and Communications</b>, and <b>Software Defined Radios/Networks</b>, this project aims to enhance spectrum utilization and develop intelligent mechanisms for debugging, monitoring, policing, and improving wireless communications.
+            The use of <b>Cognitive Systems</b>, <b>Embedded Systems</b>, and <b>FPGAs</b> plays a crucial role in achieving these goals.
+            Additionally, integrating technologies from <b>L3Harris Technologies</b> and <b>Cisco Systems</b>, along with the innovative use of <b>drones</b>, allows for advanced solutions and unprecedented flexibility in spectrum usage and device interaction.
+          </p>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div id="modal-2" class="modal hidden">
+        <div class="modal-content">
+          <span class="close-button" onclick="closeModal('modal-2')">&times;</span>
+          <h2>ScholarSync</h2>
+          <p>
+            ScholarSync is a dynamic startup that enables researchers to find opportunities in their field by matching students with professors.
+            It will use <b>PostgreSQL</b> to manage user data and <b>Django</b> to handle everything from registration to profile creation.
+            On the front end, <b>React</b> and <b>Bootstrap</b> work together to create a sleek and intuitive interface, making it easy for users to browse profiles and send invitations.
+            <b>Figma</b> was utilized to design a prototype, ensuring a smooth and seamless user experience.
+            For email notifications, ScholarSync integrates with <b>Mailgun</b>, and even has a real-time messaging system built-in with <b>Socket.IO</b>, keeping users connected and engaged.
+          </p>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div id="modal-3" class="modal hidden">
+        <div class="modal-content">
+          <span class="close-button" onclick="closeModal('modal-3')">&times;</span>
+          <h2>Spotify Wrapped 2.0</h2>
+          <p>
+            This Android application is all about enhancing the Spotify experience.
+            It uses <b>Kotlin</b> to let users view their top artists and songs directly from their Spotify profile, thanks to the <b>Spotify Developer API</b>.
+            For handling user authentication and database storage, <b>Firebase</b> comes into play.
+            The app also features an interactive chatbot developed with <b>OpenAI's ChatGPT API</b>, which predicts similar songs and artists, making the user experience even more engaging and personalized.          </p>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div id="modal-4" class="modal hidden">
+        <div class="modal-content">
+          <span class="close-button" onclick="closeModal('modal-4')">&times;</span>
+          <h2>Sustainable Travel Planner</h2>
+          <p>
+            Sustainable Travel Planner is a comprehensive website designed to help users plan sustainable vacations based on their chosen country, interests, and budget.
+            It leverages <b>Google Maps web scraping</b> to gather detailed information on living accommodations, restaurants, and recreational activities.
+            The project emphasizes a seamless <b>UI/UX</b>, utilizing <b>React</b> and <b>Bootstrap</b> on the front end.
+            For backend development and data management, <b>Node.js</b> and <b>MongoDB</b> are employed, ensuring efficient and reliable performance.
+            This planner allows users to effortlessly design eco-friendly trips tailored to their preferences and financial considerations.
+          </p>
+        </div>
+      </div>
+
+      <!-- Project 5 -->
+      <div id="modal-5" class="modal hidden">
+        <div class="modal-content">
+          <span class="close-button" onclick="closeModal('modal-5')">&times;</span>
+          <h2>Health, Fitness, and Nutrition Tracker</h2>
+          <p>
+            Health, Fitness, and Nutrition Tracker is a personalized website designed to help users monitor their health, fitness, and nutrition progress.
+            Utilizing <b>Figma</b>, the site offers an intuitive interface to visualize past, current, and future progress aligned with user goals and Apple Watch statistics through the <b>Apple HealthKit API</b>.
+            For secure data synchronization, <b>OAuth</b> 2.0 is implemented, and <b>PayPal</b> is used for payment processing, ensuring a seamless and secure user experience.
+          </p>
+        </div>
+      </div>
+
+      <!-- Project 6 -->
+      <div id="modal-6" class="modal hidden">
+        <div class="modal-content">
+          <span class="close-button" onclick="closeModal('modal-6')">&times;</span>
+          <h2>Quantum Cryptosystem Data Transit</h2>
+          <p>
+            This secure and reliable Quantum Cryptosystem is an innovative project focused on advancing <b>quantum cryptography</b>.
+            Designed using <b>IBM's Quantum Machines</b>, this novel cryptosystem is <b>70%</b> safer than the industry standard.
+            It has been recognized by prestigious organizations including the <b>CIA</b>, <b>Amazon</b>, <b>IEEE</b>, and <b>The Aerospace Corporation</b>.
+            This project was 1 of 24 countywide projects selected for the <b>national RSEF Competition</b>, showcasing its significance and potential in the field of secure information transfer.
+          </p>
+        </div>
+      </div>
+
+      <!-- Project 7 -->
+      <div id="modal-7" class="modal hidden">
+        <div class="modal-content">
+          <span class="close-button" onclick="closeModal('modal-7')">&times;</span>
+          <h2>Malicious Apps on Google Play</h2>
+          <p>
+            Detection of Malicious Apps on <b>Google Play</b> is a cutting-edge project aimed at making the Google Play store safer for users by leveraging <b>machine learning</b>.
+            By utilizing <b>Python</b> and <b>TensorFlow</b>, we developed and trained sophisticated models to effectively detect and flag malicious applications, resulting in an <b>86%</b> improvement in platform integrity.
+            To enhance the detection process, the project incorporated <b>Natural Language Processing (NLP)</b> with <b>Keras</b> and <b>Scikit-learn</b>, analyzing user reviews and app permissions for suspicious activity.
+            This comprehensive approach ensures that users can enjoy a more secure app environment, making the Google Play store a safer place for everyone.
+          </p>
+        </div>
+      </div>
+
+      <!-- Project 8 -->
+      <div id="modal-8" class="modal hidden">
+        <div class="modal-content">
+          <span class="close-button" onclick="closeModal('modal-8')">&times;</span>
+          <h2>Biodiversity Analysis of Farmland</h2>
+          <p>
+            The Comparative Biodiversity Analysis of Farmland Post-Secondary Succession project leverages <b>machine learning</b> to analyze biodiversity across nine plots at Blandy Experimental Farm after secondary succession events in 2003, 2005, and 2009.
+            Using <b>Python</b>, <b>Pandas</b>, and <b>Scikit-learn</b>, the project employed <b>Random Forest</b> algorithms to compare datasets from these years.
+            Visualization tools like <b>Matplotlib</b> and <b>Seaborn</b> provided clear insights into biodiversity trends, enhancing our understanding of succession impacts on farmland ecosystems.
+            Biodiversity was assessed using the <b>Shannon-Wiener Diversity Index</b>, and statistical differences were also evaluated with the <b>Kruskal-Wallis</b> nonparametric test.
+          </p>
+        </div>
+      </div>
+
+      <!-- Project 9 -->
+      <div id="modal-9" class="modal hidden">
+        <div class="modal-content">
+          <span class="close-button" onclick="closeModal('modal-9')">&times;</span>
+          <h2>Radon Levels in Basement Homes</h2>
+          <p>
+            Analyzing the Relationship between Radon Levels in Homes and their Proximity to Water Wells is a detailed project that investigates how radon concentrations in home basements correlate with their proximity to water bodies.
+            Utilizing <b>ArcGIS</b> for precise mapping and spatial analysis, the study integrated radon measurement datasets and geographic locations of homes with basements and water wells.
+            Statistical analysis using <b>R</b> employed correlation and regression techniques to explore the relationship.
+            Visualization tools like <b>Tableau</b> and <b>Matplotlib</b> created detailed maps and graphs, providing clear insights into the spatial distribution of radon levels, emphasizing the potential health risks associated with radon exposure.
+          </p>
+          <br>
+          <p>
+            For more details about the project, visit the <a href="https://storymaps.arcgis.com/stories/d608c92315e04cb8b1abb44f7a9c36ad" target="_blank"> <u>STORY MAP</u></a>.
+          </p>
+        </div>
+      </div>
+
+      <script src="{{ url_for('static', filename='main.js') }}"></script>
+    </section>
+  
+
+
+    <!-- Contact Section -->
+  <section id="contact" class="container mx-auto p-6 mt-10">
+    <h2 class="text-4xl font-bold text-center text-blue-900">Contact</h2>
+      <div class="flex flex-col items-center mt-4 space-y-4">
+        <p class="text-gray-700">You can reach me at:</p>
+        <a href="mailto:tanishka.mehta000@gmail.com" class="text-blue-900 font-bold">tanishka.mehta000@gmail.com</a>
+        <div class="flex justify-center mt-4 space-x-4">
+          <a href="https://www.linkedin.com/in/tanishka-mehta-245024210/" target="_blank" class="text-blue-900 hover:text-gray-500">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11.5 19h-3v-9h3v9zm-1.5-10.286c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm12.5 10.286h-3v-4.978c0-2.924-3-2.707-3 0v4.978h-3v-9h3v1.528c1.396-2.586 7-2.777 7 2.476v5.996z"/>
+          </svg>
+          </a>
+          <a href="https://github.com/tanishkamehta000" target="_blank" class="text-blue-900 hover:text-gray-500">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 .5c-6.627 0-12 5.373-12 12 0 5.302 3.438 9.8 8.205 11.387.6.11.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.607-4.042-1.607-.546-1.387-1.332-1.756-1.332-1.756-1.089-.745.083-.729.083-.729 1.204.084 1.837 1.237 1.837 1.237 1.07 1.833 2.809 1.304 3.495.998.108-.774.418-1.304.762-1.604-2.665-.303-5.466-1.334-5.466-5.931 0-1.31.468-2.381 1.236-3.221-.124-.303-.536-1.524.118-3.176 0 0 1.008-.322 3.301 1.23.958-.266 1.983-.399 3.003-.404 1.02.005 2.045.138 3.005.404 2.29-1.553 3.297-1.23 3.297-1.23.656 1.653.244 2.874.12 3.176.77.84 1.236 1.911 1.236 3.221 0 4.608-2.805 5.624-5.475 5.921.429.369.813 1.102.813 2.222 0 1.606-.015 2.903-.015 3.296 0 .322.218.694.825.577 4.765-1.589 8.2-6.087 8.2-11.385 0-6.627-5.373-12-12-12z"/>
+          </svg>
+          </a>
+          <a href="https://drive.google.com/file/d/1Yx4ro-_eexJ4mVByiyeT3lVg4I3N250S/preview" target="_blank" class="text-blue-900 hover:text-gray-500">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M6 2h6l6 6v14c0 1.104-.896 2-2 2h-10c-1.104 0-2-.896-2-2v-18c0-1.104.896-2 2-2zm7 0v5h5l-5-5zm-6 7h8v2h-8v-2zm0 4h8v2h-8v-2zm0 4h8v2h-8v-2z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+  </section>
+  
+  </body>
+</html>
